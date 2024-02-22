@@ -12,7 +12,17 @@ import android.widget.Toast;
 import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
+/*
+* while launching app - create,start,resume
+* while going background and going next screen - pause,stop,
+* again get back from background  and come back from current screen- restart,start,resume
+* while close the app - pause,stop ,destroy
+* while changing orientation- pause,stop ,destroy,create, start,resume
+*
+* */
 
+
+    //manifest- essential information about your android app to android os-meta data about of app
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+//explicit intent
     public void goToSecondScreen(){
         Intent intent=new Intent(this,MainActivity2.class);
         startActivity(intent);
     }
-
+//implicit intent
     public void openWebPage(){
         Uri webPage= Uri.parse("https://www.google.com");
         Intent intent=new Intent(Intent.ACTION_VIEW,webPage);
